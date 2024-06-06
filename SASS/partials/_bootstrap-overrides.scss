@@ -1,0 +1,103 @@
+// Custom.scss
+// Option B: Include parts of Bootstrap
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "../../bootstrap/scss/functions";
+@import "../../bootstrap/scss/mixins/banner";
+/* @include bsBanner("");
+ */
+// 2. Include any default variable overrides here
+//Esercizio 5
+$btn-padding-y: 0.75rem;
+$btn-padding-x: 2.5rem;
+//Esercizio 6
+$grid-gutter-width: 0.5rem;
+//Esercizio 7
+$card-border-radius: 2rem;
+$card-bg: dark;
+$card-color: info;
+
+
+
+// scss-docs-start import-stack
+// Configuration
+
+@import "../../bootstrap/scss/variables";
+@import "../../bootstrap/scss/variables-dark";
+@import "../../bootstrap/scss/maps";
+@import "../../bootstrap/scss/mixins";
+@import "../../bootstrap/scss/utilities";
+
+
+
+
+// Layout & components
+@import "../../bootstrap/scss/root";
+@import "../../bootstrap/scss/reboot";
+@import "../../bootstrap/scss/type";
+@import "../../bootstrap/scss/images";
+@import "../../bootstrap/scss/containers";
+@import "../../bootstrap/scss/grid";
+@import "../../bootstrap/scss/tables";
+@import "../../bootstrap/scss/forms";
+@import "../../bootstrap/scss/buttons";
+@import "../../bootstrap/scss/transitions";
+@import "../../bootstrap/scss/dropdown";
+@import "../../bootstrap/scss/button-group";
+@import "../../bootstrap/scss/nav";
+@import "../../bootstrap/scss/navbar";
+@import "../../bootstrap/scss/card";
+@import "../../bootstrap/scss/accordion";
+@import "../../bootstrap/scss/breadcrumb";
+@import "../../bootstrap/scss/pagination";
+@import "../../bootstrap/scss/badge";
+@import "../../bootstrap/scss/alert";
+@import "../../bootstrap/scss/progress";
+@import "../../bootstrap/scss/list-group";
+@import "../../bootstrap/scss/close";
+@import "../../bootstrap/scss/toasts";
+@import "../../bootstrap/scss/modal";
+@import "../../bootstrap/scss/tooltip";
+@import "../../bootstrap/scss/popover";
+@import "../../bootstrap/scss/carousel";
+@import "../../bootstrap/scss/spinners";
+@import "../../bootstrap/scss/offcanvas";
+@import "../../bootstrap/scss/placeholders";
+
+// Helpers
+@import "../../bootstrap/scss/helpers";
+
+// Utilities
+@import "../../bootstrap/scss/utilities/api";
+// scss-docs-end import-stack
+//Esercizio 1
+$font-sizes: (
+    7: $font-size-base * 0.875,
+    8: $font-size-base * 0.75,
+    9: $font-size-base * 0.625,
+    10: $font-size-base * 0.5
+);
+
+
+
+@for $i from 7 through 10 {
+    .fs-#{$i} {
+        font-size: map-get($font-sizes, $i) !important;
+    }
+}
+
+;
+//Esercizio 2
+$border-widths: (
+    6: 6px,
+    7: 7px,
+    8: 8px,
+    9: 9px,
+    10: 10px
+);
+
+@each $num, $width in $border-widths {
+    .border-#{$num} {
+        border-width: $width !important;
+    }
+}
