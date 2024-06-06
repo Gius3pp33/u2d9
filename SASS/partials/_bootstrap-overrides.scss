@@ -12,11 +12,8 @@ $btn-padding-y: 0.75rem;
 $btn-padding-x: 2.5rem;
 //Esercizio 6
 $grid-gutter-width: 0.5rem;
-//Esercizio 7
-$card-border-radius: 2rem;
-$card-bg: dark;
-$card-color: info;
-
+$card-border-radius: 2rem !default;
+$danger: #ff0077 !default;
 
 
 // scss-docs-start import-stack
@@ -24,9 +21,16 @@ $card-color: info;
 
 @import "../../bootstrap/scss/variables";
 @import "../../bootstrap/scss/variables-dark";
+
+$card-bg:  $dark;
+$card-color: map-get($theme-colors, "info") !default;
+
 @import "../../bootstrap/scss/maps";
 @import "../../bootstrap/scss/mixins";
 @import "../../bootstrap/scss/utilities";
+
+
+
 
 
 
@@ -70,12 +74,14 @@ $card-color: info;
 // Utilities
 @import "../../bootstrap/scss/utilities/api";
 // scss-docs-end import-stack
+
+
 //Esercizio 1
 $font-sizes: (
-    7: $font-size-base * 0.875,
-    8: $font-size-base * 0.75,
-    9: $font-size-base * 0.625,
-    10: $font-size-base * 0.5
+    7: $font-size * 0.875,
+    8: $font-size * 0.75,
+    9: $font-size * 0.625,
+    10: $font-size * 0.5
 );
 
 
@@ -100,4 +106,6 @@ $border-widths: (
     .border-#{$num} {
         border-width: $width !important;
     }
-}
+};
+
+
